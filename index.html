@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Personal Finance Tracker</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#expenses" onclick="showSection('expenses')">Expenses</a></li>
+            <li><a href="#income" onclick="showSection('income')">Income</a></li>
+            <li><a href="#investments" onclick="showSection('investments')">Investments</a></li>
+            <li><a href="#summary" onclick="showSection('summary')">Summary</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="summary" class="hidden">
+            <h2>Summary</h2>
+            <div class="summary-card">
+                <p>Total Expenses: <span id="total-expenses">₹0</span></p>
+                <p>Total Income: <span id="total-income">₹0</span></p>
+                <p>Total Savings: <span id="total-savings">₹0</span></p>
+                <p>Total Investment: <span id="total-investment">₹0</span></p>
+                <p>Total Profit/Loss: <span id="total-profit-loss">₹0</span></p>
+                <p>Percentage Gain/Loss: <span id="percentage-gain-loss">0%</span></p>
+            </div>
+            <button onclick="downloadSummary()">Download Summary (PDF/Excel)</button>
+
+            <div id="summary-entries">
+                <!-- Dynamic Summary Entries Here -->
+            </div>
+        </section>
+
+        <section id="expenses" class="hidden">
+            <h2>Expenses</h2>
+            <form id="expense-form">
+                <input type="date" placeholder="Date" required>
+                <input type="text" placeholder="Description" required>
+                <input type="number" placeholder="Amount" required>
+                <select>
+                    <option value="Cash">Cash</option>
+                    <option value="Card">Card</option>
+                    <option value="Online">Online</option>
+                </select>
+                <input type="text" placeholder="Notes">
+                <button type="submit">Add Expense</button>
+            </form>
+            <div id="expense-entries">
+                <!-- Dynamic Expense Entries Here -->
+            </div>
+        </section>
+
+        <section id="income" class="hidden">
+            <h2>Income</h2>
+            <form id="income-form">
+                <input type="date" placeholder="Date" required>
+                <input type="text" placeholder="Income Source" required>
+                <input type="number" placeholder="Amount" required>
+                <input type="text" placeholder="Notes">
+                <button type="submit">Add Income</button>
+            </form>
+            <div id="income-entries">
+                <!-- Dynamic Income Entries Here -->
+            </div>
+        </section>
+
+        <section id="investments" class="hidden">
+            <h2>Investments</h2>
+            <form id="investment-form">
+                <input type="date" placeholder="Date" required>
+                <input type="text" placeholder="Investment Type" required>
+                <input type="number" placeholder="Quantity of Shares" required>
+                <input type="number" placeholder="Invested Share Value" required>
+                <input type="text" placeholder="Stock Name" id="stock-name" required>
+                <input type="number" placeholder="Current Share Value" id="live-share-value" readonly>
+                <input type="text" placeholder="Notes">
+                <button type="submit">Add Investment</button>
+            </form>
+            <div id="investment-entries">
+                <!-- Dynamic Investment Entries Here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Personal Finance Tracker</p>
+    </footer>
+</body>
+</html>
