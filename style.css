@@ -1,0 +1,26 @@
+/* Existing styles... */
+
+.entry-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.edit-btn, .delete-btn {
+    background-color: #ff9900;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.delete-btn {
+    background-color: red;
+}
+
+.edit-btn:hover, .delete-btn:hover {
+    opacity: 0.8;
+}
